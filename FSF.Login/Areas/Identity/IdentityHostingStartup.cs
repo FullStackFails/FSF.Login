@@ -17,7 +17,7 @@ namespace FSF.Login.Areas.Identity
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(
                 context.Configuration.GetConnectionString("DefaultConnection")));
-        services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+        services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
             .AddEntityFrameworkStores<ApplicationDbContext>();
       });
     }

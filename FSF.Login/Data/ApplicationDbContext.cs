@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FSF.Login.Data
 {
-  public class ApplicationDbContext : IdentityDbContext<User>
+  public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
   {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)

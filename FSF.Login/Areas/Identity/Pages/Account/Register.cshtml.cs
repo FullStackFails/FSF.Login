@@ -19,14 +19,14 @@ namespace FSF.Login.Areas.Identity.Pages.Account
   [AllowAnonymous]
   public class RegisterModel : PageModel
   {
-    private readonly SignInManager<User> _signInManager;
-    private readonly UserManager<User> _userManager;
+    private readonly SignInManager<ApplicationUser> _signInManager;
+    private readonly UserManager<ApplicationUser> _userManager;
     private readonly ILogger<RegisterModel> _logger;
     private readonly IEmailSender _emailSender;
 
     public RegisterModel(
-        UserManager<User> userManager,
-        SignInManager<User> signInManager,
+        UserManager<ApplicationUser> userManager,
+        SignInManager<ApplicationUser> signInManager,
         ILogger<RegisterModel> logger,
         IEmailSender emailSender)
     {
@@ -84,7 +84,7 @@ namespace FSF.Login.Areas.Identity.Pages.Account
       ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
       if (ModelState.IsValid)
       {
-        var user = new User
+        var user = new ApplicationUser
         {
           UserName = Input.Email,
           FirstName = Input.FirstName,
