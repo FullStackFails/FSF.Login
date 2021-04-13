@@ -1,5 +1,3 @@
-using System;
-
 namespace FSF.Login.Models
 {
   public class ErrorViewModel
